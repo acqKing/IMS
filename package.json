@@ -1,0 +1,83 @@
+{
+  "name": "imd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acqKing/IMS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acqKing/IMS/issues"
+  },
+  "homepage": "https://github.com/acqKing/IMS#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.13.0",
+    "browserify": "^13.0.1",
+    "browserify-shim": "^3.8.12",
+    "del": "^2.2.1",
+    "echarts": "^3.2.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-imagemin": "^3.0.2",
+    "gulp-less": "^3.1.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "hbsfy": "^2.7.0",
+    "morgan": "^1.7.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0",
+    "yargs": "^4.7.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "handlebars": "^4.0.5",
+    "jquery": "^2.1.4",
+    "nprogress": "^0.2.0",
+    "requirejs": "^2.2.0"
+  },
+  "browser": {
+    "bootstrap": "./node_modules/bootstrap/dist/js/bootstrap.js"
+  },
+  "browserify-shim": {
+    "bootstrap": {
+      "depends": [
+        "jquery:jQuery"
+      ]
+    }
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ],
+      [
+        "hbsfy",
+        {
+          "extensions": [
+            "hbs"
+          ]
+        }
+      ],
+      "browserify-shim"
+    ]
+  }
+}
