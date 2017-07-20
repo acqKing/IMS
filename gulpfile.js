@@ -13,7 +13,7 @@ var TARGET = process.env.npm_lifecycle_event;
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
-// var api = require('./api/api');
+var api = require('./api/api');
 var srcRoot = './src';
 var dist = './dist';
 
@@ -28,24 +28,24 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest(dist + '/fonts'));
 });
 
-gulp.task('images', function () {
-  return gulp.src(srcRoot+'/**/**/imgs/*')
-    .pipe($.imagemin({'/'
-      //sprogressive: true,
-      interlaced: true
-    }))
-    .pipe(gulp.dest(dist + '/imgs/'));
-});
+// gulp.task('images', function () {
+//   return gulp.src(srcRoot+'/**/**/imgs/*')
+//     .pipe($.imagemin({'/'
+//       //sprogressive: true,
+//       interlaced: true
+//     }))
+//     .pipe(gulp.dest(dist + '/imgs/'));
+// });
 
 gulp.task('html', function() {
-  return gulp.src(srcRoot+'/index.html')
+  return gulp.src(srcRoot+'html/index.html')
     .pipe(plumber())
     .pipe(gulp.dest(dist));
 });
 
 gulp.task('styles', function() {
-  return gulp.src(srcRoot+'/main.less')
-    .pipe($.less())
+  return gulp.src(srcRoot+'scss/**/*.scss')
+    .pipe($.scss())
     .pipe($.autoprefixer())
     .pipe($.rename('bundle.css'))
     .pipe(gulp.dest(dist))
@@ -59,7 +59,7 @@ var bundler = _.memoize(function(watch) {
     _.extend(options, watchify.args);
   }
 
-  var b = browserify([srcRoot+'/plugins.js',srcRoot+'/main.js'], options);
+  var b = browserify([srcRoot+'js/plugins.js',srcRoot+'/main.js'], options);
 
   if (watch) {
     b = watchify(b);
