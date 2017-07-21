@@ -2,9 +2,10 @@
   "name": "imd",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -33,11 +34,14 @@
     "gulp-load-plugins": "^1.2.4",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
     "gulp-scss": "^1.4.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.7",
     "hbsfy": "^2.7.0",
     "morgan": "^1.7.0",
+    "pump": "^1.0.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0",

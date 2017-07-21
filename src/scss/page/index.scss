@@ -1,0 +1,11 @@
+@import '../module/item.scss';
+$red:red;
+$green:green;
+.red{
+    color: $green;
+    // : 2px 10px;
+    background: $red;
+}
+.row{
+    margin: 10px 10px;
+}

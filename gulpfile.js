@@ -4,18 +4,23 @@ var plumber = require('gulp-plumber');  // 错误自启动
 var browserify = require('browserify');
 var del = require('del');
 var watchify = require('watchify');
+var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
 // var stylish = require('jshint-stylish');
 var buffer = require('vinyl-buffer');
 var _ = require('lodash');
 var TARGET = process.env.npm_lifecycle_event;
+var uglify = require('gulp-uglify');
+var gutil = require('gulp-util');
+
 
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
-var api = require('./api/api');
+// var api = require('./api/api');
 var srcRoot = './src';
 var dist = './dist';
+var client ='./dist/html'
 
 gulp.task('clean', function(cb) {
   return del([
@@ -23,10 +28,10 @@ gulp.task('clean', function(cb) {
   ], cb);
 });
 
-gulp.task('fonts', function () {
-  return gulp.src(['node_modules/bootstrap/fonts/*', srcRoot+'/*.woff'])
-    .pipe(gulp.dest(dist + '/fonts'));
-});
+// gulp.task('fonts', function () {
+//   return gulp.src(['node_modules/bootstrap/fonts/*', srcRoot+'/*.woff'])
+//     .pipe(gulp.dest(dist + '/fonts'));
+// });
 
 // gulp.task('images', function () {
 //   return gulp.src(srcRoot+'/**/**/imgs/*')
@@ -38,35 +43,20 @@ gulp.task('fonts', function () {
 // });
 
 gulp.task('html', function() {
-  return gulp.src(srcRoot+'html/index.html')
+  return gulp.src(srcRoot+'/html/**')
     .pipe(plumber())
-    .pipe(gulp.dest(dist));
+    .pipe(gulp.dest(dist + '/html'))
+    .pipe(reload({ stream: true}));
 });
 
 gulp.task('styles', function() {
-  return gulp.src(srcRoot+'scss/**/*.scss')
-    .pipe($.scss())
+  return gulp.src(srcRoot+'/scss/**/*.scss')
+    .pipe(sass())
     .pipe($.autoprefixer())
-    .pipe($.rename('bundle.css'))
-    .pipe(gulp.dest(dist))
+    .pipe(gulp.dest(dist+'/css'))
     .pipe(reload({ stream: true }));
 });
 
-var bundler = _.memoize(function(watch) {
-  var options = {debug: true};
-
-  if (watch) {
-    _.extend(options, watchify.args);
-  }
-
-  var b = browserify([srcRoot+'js/plugins.js',srcRoot+'/main.js'], options);
-
-  if (watch) {
-    b = watchify(b);
-  }
-
-  return b;
-});
 
 var handleErrors = function() {
   var args = Array.prototype.slice.call(arguments);
@@ -75,53 +65,59 @@ var handleErrors = function() {
   this.emit('end');
 };
 
-function bundle(cb, watch) {
-  return bundler(watch)
-    .bundle()
-    .on('error', handleErrors)//error事件
-    .pipe(source('bundle.js'))
-    .pipe(buffer())
-    .pipe($.sourcemaps.init({ loadMaps: true }))
-    .pipe($.sourcemaps.write('./maps'))
-    .pipe(gulp.dest(dist))
-    .on('end', cb)
-    .pipe(reload({ stream: true }));
-}
+
 
 gulp.task('scripts', function(cb) {
-  bundle(cb, true);
+   return gulp.src(srcRoot + '/js/**/*.js')
+              // // .on('error',handleErrors)
+              // .pipe(uglify({ 
+              //   preserveComments:'all'
+              // }))
+              .on('error', handleErrors)
+              .pipe(gulp.dest(dist+'/js'))
+              // .on('end',cb)
+              .pipe(reload({ stream: true}));
 });
 
-var reporter = 'spec';
+gulp.task('common-script',function(){
+  return gulp.src(srcRoot + 'html/common/*.js')
+            .on('error', handleErrors)
+            .pipe(gulp.dest(dist + '/html/common'))
+            .pipe(reload({stream: true}));
+});
+
+
 
 gulp.task('build', [
   'clean',
-  'fonts',
-  'images',
+  // 'fonts',
+  // 'images',
   'html',
+  'common-script',
   'styles',
   'scripts'
   //'test'
 ]);
 
 gulp.task('watch', ['build'], function() {
+  
   browserSync.init({
     server: {
-      baseDir: dist,//默认文件index.html??
-      middleware: function(req, res, next) {
-        api(req, res, next);
-      }
+      baseDir: dist
+      // middleware: function(req, res, next) {
+      //   // axpi(req, res, next);
+      // }
     }
   });
 
-  reporter = 'dot';
-  bundler(true).on('update', function() {//update事件？？绑定事件
-    gulp.start('scripts');
-    //gulp.start('test');
-  });
-  //gulp.watch('./test/!**!/!*.js', ['test']);
-  gulp.watch([srcRoot+'/main.less', srcRoot+'/**/*.less'], ['styles']);
-  gulp.watch([srcRoot+'/!*.html'], ['html']);
+  // reporter = 'dot';
+  // bundler(true).on('update', function() {//update事件？？绑定事件
+  //   gulp.start('scripts');
+  //   //gulp.start('test');
+  // });
+  gulp.watch([srcRoot+'/**/*.js'], ['scripts']).on('change', browserSync.reload);
+  gulp.watch([srcRoot+'/**/*.scss'], ['styles']).on('change', browserSync.reload);
+  gulp.watch([srcRoot+'/html/*.html'], ['html']).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['watch']);

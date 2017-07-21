@@ -1,0 +1,26 @@
+@charset "UTF-8";
+body, ul, li, p {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: "微软雅黑"; }
+
+a {
+  text-decoration: none; }
+
+/* 圆角边框 */
+/* 标题h2 */
+/* 字体大小颜色 */
+/* deadline背景图片 */
+/* 每个版块的标题 */
+h2 {
+  font-size: 16px;
+  font-weight: bolder;
+  margin-bottom: 28px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #eee; }
+
+/* 新闻列表 */
+
+/*# sourceMappingURL=../maps/common/same.css.map */
