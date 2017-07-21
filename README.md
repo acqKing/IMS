@@ -2,7 +2,7 @@
 
 我们这个项目是一个多页面的项目，访问不同的页面需要跳转链接。
 
-开发：bootstrp + sass + jquery + requirejs + juicer
+开发：bootstrp + sass + jquery + requirejs + handlebars
 
 
 ### 目录结构
@@ -36,7 +36,7 @@
 
 进入 IMS 目录
 * `npm install / cnpm install` 安装依赖包
-* `npm start` 启动应用
+* `gulp watch` 启动应用
 
 好了，你可以开始开发了
 

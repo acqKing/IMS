@@ -10,8 +10,8 @@ define(['lib/jquery', 'util/funcTpl'], function($,funcTpl) {
         tpl:function(){
             /*
              <div>item部分</div>
-             <p>11111</p>
-             <p>22222</p>
+            
+             <div class="row">item1</div>
             */
         }
 

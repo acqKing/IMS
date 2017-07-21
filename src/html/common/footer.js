@@ -10,7 +10,7 @@
 	}
 	var footerTpl = function(){
 		/*
-        <div class="row">footer</div>
+        <div class="row">footer footers</div>
 		*/
 	}
 	var footer = footerTpl.toString().replace(/^[^\/]+\/\*!?/, '').replace(/\*\/[^\/]+$/, '') +
