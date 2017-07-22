@@ -10,15 +10,14 @@
 ```
 ├── gulpfile.js     自动部署，监听启动
 ├── package.json    项目开发依赖
-├── static          开发目录
+├── src             开发目录
 │   ├── html
 │   ├── sass
-│   ├── css
 │   ├── js
-          ├── lib
-          ├── util
-          ├── modules
-          ├── page
+          ├── lib      类库
+          ├── util     工具
+          ├── modules  页面模块
+          ├── page     页面
 │   └── img
 ├── dist            最终目录
 └── api            mock data
@@ -37,8 +36,12 @@
 进入 IMS 目录
 * `npm install / cnpm install` 安装依赖包
 * `gulp watch` 启动应用
+* 浏览器自动打开，访问localhost:3000
+* 输入localhost:3000/html/index.html查看页面
+
 
 好了，你可以开始开发了
+###
 
 ### mock 数据
 
