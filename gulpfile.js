@@ -16,7 +16,7 @@ var gutil = require('gulp-util');
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
 
-// var api = require('./api/api');
+var api = require('./api/api');
 var srcRoot = './src';
 var dist = './dist';
 var client ='./dist/html'
@@ -78,10 +78,10 @@ gulp.task('watch', ['build'], function() {
   
   browserSync.init({
     server: {
-      baseDir: dist
-      // middleware: function(req, res, next) {
-      //   // axpi(req, res, next);
-      // }
+      baseDir: dist,
+      middleware: function(req, res, next) {
+        api(req, res, next);
+      }
     }
   });
   
