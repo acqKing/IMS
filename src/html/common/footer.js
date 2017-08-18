@@ -10,7 +10,10 @@
 	}
 	var footerTpl = function(){
 		/*
-        <div class="row">footer footers</div>
+        <fonter>
+    <p class="pull-right"><a href="#top">回到顶部</a></p>
+    <p class="text-center">Copyright &copy2017 经济管理学院信管工作室</p>
+		</fonter>
 		*/
 	}
 	var footer = footerTpl.toString().replace(/^[^\/]+\/\*!?/, '').replace(/\*\/[^\/]+$/, '') +
