@@ -45,7 +45,7 @@
     var headerTpl = function() {
 
 		/*
-                <div class="row">
+                <div class="">
                     header
                 </div>
 		*/
