@@ -27,14 +27,13 @@ require(['lib/jquery', 'module/item','util/funcTpl','util/request'], function($,
 						
 		},
 		tpl:function(){
-			/*
-				<div class="col-md-2 red">1</div>
-			*/  
+				/*<div class="col-md-2 red"></div>*/
 		}
 	};
 
 	index.init();
-	
+
+
 });
 
 
