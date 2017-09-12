@@ -1,26 +1,19 @@
-/**
- *首页
- * @author: qking
- **/
 require.config({
 	baseUrl: MIS.STATIC_ROOT
 });
-require(['lib/jquery', 'module/item','util/funcTpl','util/request'], function($, item,funcTpl,request) {
-	
-	var index = {
+require(['lib/jquery', 'module/blogitem','util/funcTpl','util/request'], function($, blogitem,funcTpl,request) {
+
+	var blog = {
 		init: function() {
 
             /*将页面比较大的逻辑提出来，写在js/module,在此处调用*/
-			item();
-
-			$("#index").append(funcTpl(index.tpl))
-
+            blogitem();
 			request.ajax(
 				'GET',
 				'/api/index'
 				).then(function(res){
 					console.log(res)
-			
+					
 				},function(err){
 					console.log(err)
 				})
@@ -32,11 +25,7 @@ require(['lib/jquery', 'module/item','util/funcTpl','util/request'], function($,
 			*/  
 		}
 	};
-
-	index.init();
+	
+	blog.init();
 	
 });
-
-
-
-

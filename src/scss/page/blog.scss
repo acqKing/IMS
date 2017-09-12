@@ -1,0 +1,90 @@
+body{
+	font-family: "楷体";
+}
+/*index*/
+$white:white;
+#header{
+	background:{
+		color: $white;
+}
+		}
+#headphoto{
+	width: 200px;
+	border:{
+		radius: 999px;
+		}
+}
+.jumbotron{
+	background:{
+		color: $white;
+		}
+	padding:0px 20%;
+}
+$center:center;
+#blog div h2{
+	text:{
+		align: $center;
+		}
+	font:{
+		size: 27px;
+		}
+}
+$black:black;
+#btn{
+	color: $black;	
+}
+#content{
+	text:{
+		indent: 2em;
+		}
+	margin:{
+		bottom: 0px;
+		}
+}
+#time{
+	margin:{
+		bottom: 10px;
+		}
+	$inherit:inherit;
+	color: $inherit;
+	font:{
+		size: 15px;
+	}
+
+}
+#del{
+	margin:{
+		left: 10px;
+		}
+}
+
+#write{
+	margin:{
+		left:25%;
+		right: 25%;
+		bottom: 70px;
+		}
+}
+#Publish{
+	margin:{
+		right: 10px;
+		}
+}
+#tithead{
+	margin:{
+		bottom: 20px;
+		}
+}
+$block:block;
+$none:none;
+#tindex{
+	display:$block;
+}
+#tpage{
+	display:$none;
+}
+#twrite{
+	display:$none;
+}
+
+/*personal*/
