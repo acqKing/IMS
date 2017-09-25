@@ -9,11 +9,13 @@ $text-color:white;
 $margin:0px auto;
 $margin-top:50px;
 $margin-bottom:50px;
-$bgcolor:#208C5B;
+$bgcolor:#E58172;
 $relative:relative;
 $fixed:fixed;
 $nav-top:10px;
 $nav-right:20px;
+$content-width:800px;
+
 .navbar-fixed-top{
 	//margin:0px;
 }
@@ -46,7 +48,6 @@ $nav-right:20px;
 		text-align:$text-align;
 		color:$text-color;
 	}
-
 }
 @media screen and(max-width:800px){
 	.nav-head{
@@ -80,7 +81,7 @@ $nav-right:20px;
 	.maninfo{
 		position:$relative;
 		width:100%;
-		height:400px;
+		height:300px;
 		margin:$margin;
 		padding-top:150px;
 		padding-bottom:150px;
@@ -100,66 +101,29 @@ $nav-right:20px;
 .nav-head a:hovor,.nav-head a:focus{
 	background-color:$bgcolor;
 }
+
 .name{
 	font-size:$font-size;
 	color:$text-color;
 }
 
-
-
-.card{
-	position:$relative;
-}
-
-.card-body{
-	margin:0px auto;
+.photo{
 	margin-top:$margin-top;
+	text-align:$text-align;
+	margin-bottom:$margin-bottom;
+}
+.list-group{
+	position:$relative;
+	margin:$margin;
+	margin-bottom:$margin-bottom;
 }
 @media screen and(min-width:800px){
-	.card-body{
+	.list-group{
 	width:50%;
 	}
 }
 @media screen and(max-width:800px){
-	.card-body{
+	.list-group{
 	width:80%;
 	}
 }
-
-
-
-
-
-.card-title{
-	font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
-	font-size:$card-title-size;
-}
-
-$black:black;
-.card-title a{
-	font-size:$card-title-size;
-	cursor:pointer;
-	color:inherit;
-}
-$underline:underline;
-$all-color:#497D92;
-.card-title a:hovor{
-	text-decoration:$underline;
-	color:$all-color;
-}
-.card-text{
-	font-size:$text-size;
-	//text-indent:$text-indent;
-	 color: #a3a3a3;
-}
-.information{
-	color:#808080;
-}
-$pointer:pointer;
-.author{
-	cursor:$pointer;
-}
-.card:last-child{
-	margin:$margin-bottom;
-}
-

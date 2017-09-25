@@ -1,5 +1,5 @@
 /**
- *blog首页
+ *blogpersonal
  * @author: qking
  **/
 require.config({
@@ -7,12 +7,12 @@ require.config({
 });
 require(['lib/jquery', 'module/blogitem','util/funcTpl','util/request'], function($, blogitem,funcTpl,request) {
 	
-	var blog = {
+	var blogpersonal = {
 		init: function() {
 
             /*将页面比较大的逻辑提出来，写在js/module,在此处调用*/
 			blogitem();
-			$("#index").before(funcTpl(blog.tpl))
+
 			request.ajax(
 				'GET',
 				'/api/index'
@@ -21,21 +21,29 @@ require(['lib/jquery', 'module/blogitem','util/funcTpl','util/request'], functio
 			
 				},function(err){
 					console.log(err)
-				})
+				})			
+
+	
+			//函数调用
+			
 						
 		},
-		tpl:function(){
-			/*
 
-			 */
-		}
+
+		transfer:function(){
+			
+		},
+
+
+
+
+
+
 	};
 
-	blog.init();
-
+	blogpersonal.init();
+	blogpersonal.transfer();
 
 });
-
-
 
 

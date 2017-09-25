@@ -12,9 +12,9 @@ require(['lib/jquery', 'module/item','util/funcTpl','util/request'], function($,
 
             /*将页面比较大的逻辑提出来，写在js/module,在此处调用*/
 			item();
-
+	
 			$("#index").append(funcTpl(index.tpl))
-
+			
 			request.ajax(
 				'GET',
 				'/api/index'
