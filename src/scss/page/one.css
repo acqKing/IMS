@@ -1,0 +1,42 @@
+/*
+Error: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 4 spaces.
+        on line 10 of one.sass
+
+5:     margin-top: $t-margin
+6: .setup
+7:     cursor: $setup-cursor
+8: button
+9:     display: inline-block
+10: 	padding: $button-padding
+11: 	font-weight: 400
+12: 	line-height: 1.42857143
+13: 	text-align: center
+14: 	vertical-align: middle
+15: 	cursor: pointer
+
+Backtrace:
+one.sass:10
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:494:in `block in tabulate'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:452:in `each'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:452:in `each_with_index'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:452:in `tabulate'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:417:in `_to_tree'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:51:in `process_result'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/base.rb:52:in `parse'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/base.rb:19:in `parse!'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/bin/sass:13:in `<top (required)>'
+C:/Ruby23/bin/sass:22:in `load'
+C:/Ruby23/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 4 spaces.\A         on line 10 of one.sass\A \A 5:     margin-top: $t-margin\A 6: .setup\A 7:     cursor: $setup-cursor\A 8: button\A 9:     display: inline-block\A 10: 	padding: $button-padding\A 11: 	font-weight: 400\A 12: 	line-height: 1.42857143\A 13: 	text-align: center\A 14: 	vertical-align: middle\A 15: 	cursor: pointer"; }

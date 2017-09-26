@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>所有团队</title>
+<link rel="stylesheet" type="text/css" href="../scss/page/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../scss/page/one.css">
+<script type="text/javascript" src="../js/lib/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../js/lib/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/page/npm.js"></script>
+<script type="text/javascript" src="../js/page/one.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">信管工作室</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">首页<span class="sr-only">(current)</span></a></li>
+                <li><a href="#">用户管理</a></li>
+                <li class="active"><a href="#">团队管理</a></li>
+                <li><a href="#">博客管理</a></li>
+                <li><a href="#">文件管理</a></li>
+                <li><a href="#">项目管理</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我们 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">工作室介绍</a></li>
+                        <li><a href="#">最新信息</a></li>
+                        <li><a href="#">项目成果</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">。。。</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--<form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登录</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">账户管理 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">账号注册</a></li>
+                        <li><a href="#">修改密码</a></li>
+                        <li><a href="#">相关帮助</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--
+<div class="next tfind">
+<span>团队</span>
+	<input type="text" name="group">
+</div>
+
+<nav>
+<ul>
+<li>所有团队</li>
+<li>我的团队
+<ul>
+<li>团队资料</li>
+<li>团队公告</li>
+<li>团队项目</li>
+<li>团队成员</li>
+<li>退出团队</li>
+</ul>
+</li>
+<li>新建团队</li>
+</nav>-->
+<div class="twhite"></div>
+<!--导航开始-->
+<div class="navbar navbar-default" role="navigation">
+<ul class="nav navbar-nav">
+<li class="active"><a href="">所有团队</a> </li>
+<li><a href="six.html">我的团队</a></li>
+
+<li><a class="setup" data-toggle="modal" data-target="#myModal">创建新团队</a> </li>
+<!--导航结束-->
+<!--创建新团队表单开始-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">创建新团队</h4>
+            </div>
+            <div class="modal-body">
+            <form class="navbar-form" role="search">团队名称
+    	<div class="form-group"><input type="text" class="form-control" placeholder="">
+    		
+    	</div>
+    	<button type="submit" class="btn btn-default">提交</button>
+
+    </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+</ul>
+</div>
+<!--创建新团队表单结束-->
+
+<!--团队列表开始-->
+<table class="table table-striped">
+  <caption></caption>
+  <thead>
+    <tr>
+      <th>团队名称</th>
+      <th>负责人</th>
+      <th>创建时间</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tanmay</td>
+      <td>Bangalore</td>
+      <td>560001</td>
+    </tr>
+    <tr>
+      <td>Sachin</td>
+      <td>Mumbai</td>
+      <td>400003</td>
+    </tr>
+    <tr>
+      <td>Uma</td>
+      <td>Pune</td>
+      <td>411027</td>
+    </tr>
+  </tbody>
+</table>
+<!--团队列表结束-->
+<!--分页开始-->
+<center>
+显示第xx页，一共<span class="teamCounts">xx</span>个团队<br>
+<ul class="pagination">
+    <li class="pageTop"><a href="#">&laquo;</a></li>
+    <li class="pageBody"><a href="#">1</a></li>
+    <li class="pageBody"><a href="#">2</a></li>
+    <li class="pageBody"><a href="#">3</a></li>
+    <li class="pageBody"><a href="#">4</a></li>
+    <li class="pageBody"><a href="#">5</a></li>
+    <li class="pageBottom"><a href="#">&raquo;</a></li>
+</ul>
+</center>
+<!--分页结束-->
+
+</body>
+</html>

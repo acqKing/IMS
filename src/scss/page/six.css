@@ -1,0 +1,43 @@
+/*
+Error: Invalid GBK character "\xE4"
+        on line 4 of six.sass
+
+1: .twhite
+2:   margin: 50px
+3: 
+4: /*二级导航的位置*\/
+5: 
+6: .tsp
+7:   position: fixed
+8:   z-index: 2
+9:   width: 100px
+
+Backtrace:
+six.sass:4
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/util.rb:1048:in `rescue in block in find_encoding_error'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/util.rb:1045:in `block in find_encoding_error'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/util.rb:1044:in `each'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/util.rb:1044:in `each_with_index'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/util.rb:1044:in `find_encoding_error'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/util.rb:772:in `check_sass_encoding'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:444:in `check_encoding!'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:400:in `_to_tree'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:51:in `process_result'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/base.rb:52:in `parse'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/lib/sass/exec/base.rb:19:in `parse!'
+C:/Ruby23/lib/ruby/gems/2.3.0/gems/sass-3.5.1/bin/sass:13:in `<top (required)>'
+C:/Ruby23/bin/sass:22:in `load'
+C:/Ruby23/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid GBK character \"\xE4\"\A         on line 4 of six.sass\A \A 1: .twhite\A 2:   margin: 50px\A 3: \A 4: /*二级导航的位置*/\A 5: \A 6: .tsp\A 7:   position: fixed\A 8:   z-index: 2\A 9:   width: 100px"; }
