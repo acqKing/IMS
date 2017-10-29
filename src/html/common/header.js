@@ -4,7 +4,7 @@
 	var companyId,companyName;
 	var headerCss = document.getElementsByTagName('script'),
 		path, cssPath, headTitle = "";
-	var temp = '';
+	var temp = '..';
 
 	// if (location.host == 'localhost:8080' || location.host == '202.202.43.7' ||
 	// 	location.host == '172.22.1.159') {
@@ -30,17 +30,17 @@
 					'<meta charset="UTF-8">'+
 					'<meta name="viewPort" content="width=device-width, initial-scale=1.0">'+
 					'<title>'+headTitle+'</title>'+
-					'<link rel="stylesheet" href="/css/lib/bootstrap.css"/>'+
-					'<link rel="stylesheet" href="/css/common/global.css"/>'+
-					'<link rel="stylesheet" href="/css/common/header.css"/>'
+					'<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>'+
+					'<link rel="stylesheet" href="../css/common/global.css"/>'+
+					'<link rel="stylesheet" href="../css/common/header.css"/>'
 					+cssPath+
 					'<script>'+	
 						'var MIS = {};'+
 						'MIS.STATIC_ROOT = "/js"'+
 					'</script>'+
-					'<script src="'+temp+'/js/lib/jquery.js"></script>'+
+					'<script src="../js/lib/jquery.js"></script>'+
 					// '<script src="'+temp+'/js/modules/api.js"></script>'
-					'<script src="'+temp+'/js/lib/bootstrap.js"></script>'+
+					'<script src="bootstrap/js/bootstrap.min.js"></script>'+
 				'</head>';
 				
     var headerTpl = function() {
@@ -151,6 +151,7 @@
 	};
 
 	var  header = html +'<div class="wrapper">'+ headerTpl.toString().replace(/^[^\/]+\/\*!?/, '').replace(/\*\/[^\/]+$/, '');
+    console.log(header)
 	document.write(header);
 
 	

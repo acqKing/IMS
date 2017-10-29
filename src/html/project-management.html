@@ -1,0 +1,212 @@
+<script type="text/javascript" src="common/header.js" data-css="myCss" data-title="项目管理"></script>
+<body>
+	<!-- 展示面板 -->
+	<div class="panel panel-info mypanel" style="margin-top: 50px;margin-bottom: 30px;">
+		<div class="pro-tools clearfix">
+			<span class="all-pro pull-left pro-tab-active">所有项目</span>
+			<div class="switch-view pull-right">
+				<span class="glyphicon glyphicon-th-large view-active" title="网格视图"></span>
+				<span class="glyphicon glyphicon-th-list" title="列表视图"></span>
+			</div>
+		</div>
+		<div class="panel-body">
+			<ul class="list-inline pro-grid" id="pro-obj">
+			</ul>
+			<ul class="pagination fenye">
+			</ul>
+		</div>
+	</div>
+	<!-- 项目面板 -->
+	<div class="panel panel-info mypanel" style="position: relative;display: none;" id="project-plate">
+		<div class="panel-heading clearfix" id="introduce-plate">
+			<!-- 介绍 -->
+			<div class="pull-right">
+				<span class="pro-member">成员</span>
+			</div>
+		</div>
+		<!-- 文件 -->
+		<div class="panel-body clearfix">
+			<div class="clearfix">
+				<div class="file">
+					<h2>文件</h2>
+					<div class="btn-group">
+					    <button type="file" class="btn btn-default">
+					    	上传文件
+					    	<input type="file" name="" tabindex="-1" class="upload-file">
+					    </button>
+					</div>
+				</div>
+			</div>
+			<!-- 文件模块 -->
+			<div class="file-wrap clearfix">
+				<!-- <div class="file-folder">			
+					<span class="glyphicon glyphicon-file"></span>
+					<p>文件名称</p>
+					<a href="javascript:;">删除</a>
+					<a href="javascript:;">下载</a>
+				</div>
+ -->				<!-- <div class="file-folder">
+					<span class="glyphicon glyphicon-file"></span>
+					<p>文件名称</p>
+					<div class="progress">
+					    <div class="progress-bar progress-bar-success progress-bar-striped active" style="min-width: 2em">0%
+					    </div>
+					</div>
+					<a href="javascript:;">取消</a>
+				</div> -->
+			</div>
+			<div class="sure-delete panel panel-danger">
+				<a href="javascript:;">&times;</a>
+				<p>确定删除这个文件吗</p>
+				<button type="button" class="btn btn-danger">确定</button>
+				<button type="button" class="btn btn-default">取消</button>
+			</div>
+		</div>
+		<a href="javascript:;" id="check-all">查看全部文件</a>
+	</div>
+	<!-- 成员 -->
+	<div class="panel panel-info mypanel member">
+		<div class="panel-heading clearfix">
+			<h3 class="pull-left">项目成员</h3>
+			<span class="pull-right add-member">添加成员</span>
+		</div>
+		<div class="panel-body">
+			<ul class="project-member list-inline">
+				<!-- <li>
+					<span>成员1</span><br>
+					<span>成员</span>
+					<a href="javascript:;">&times;</a>
+				</li>
+				<li>
+					<span>成员2</span><br>
+					<span>成员</span>
+					<a href="javascript:;">&times;</a>
+				</li>
+				<li>
+					<span>成员3</span><br>
+					<span>成员</span>
+					<a href="javascript:;">&times;</a>
+				</li>
+				<li>
+					<span>成员4</span><br>
+					<span>成员</span>
+					<a href="javascript:;">&times;</a>
+				</li> -->
+			</ul>
+		</div>
+		<div class="add-panel panel panel-info">
+			<a href="javascript:;">&times;</a>
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label for="searchID" class="col-sm-2 control-label">姓名</label>
+					<div class="col-sm-10">
+						<input type="text" name="" placeholder="输入要添加成员的姓名" id="searchID" class="form-control">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-12">
+						<button type="button" class="btn btn-default btn-block btn-primary" id="add-btn">添加</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- 文件详情 -->
+	<div class="panel panel-info mypanel" style="display: none;" id="folder">
+		<div class="panel-heading clearfix">
+			<ol class="breadcrumb bread-nav" id="bread-nav">
+				<li><a href="javascript:;" id="change-table">文件</a></li>
+			</ol>
+			<div class="btn-group pull-left file-btn">
+			    <button type="file" class="btn btn-default">
+			    	上传文件
+			    	<input type="file" name="" tabindex="-1" class="upload-file">
+			    </button>
+			</div>
+		</div>
+		<p class="no-file">这个文件夹里面没有文件哟:(</p>
+		<div class="panel-body">
+			<table class="table table-hover file-table">
+				<tbody>
+					<tr>
+						<th>名称</th>
+						<th>上传时间</th>
+						<th>上传者</th>
+						<th>操作</th>
+					</tr>
+					<tr>
+						<td><span class="glyphicon glyphicon-file"></span><span class="file-name">文件名<span></td>
+						<td>222222</td>
+						<td>上传者</td>
+						<td><button class="btn btn-warning">删除</button></td>
+					</tr>
+					<tr>
+						<td><span class="glyphicon glyphicon-file"></span><span class="file-name">文件名<span></td>
+						<td>222222</td>
+						<td>上传者</td>
+						<td><button class="btn btn-warning">删除</button></td>
+					</tr>
+					<tr>
+						<td><span class="glyphicon glyphicon-file"></span><span class="file-name">文件名<span></td>
+						<td>222222</td>
+						<td>上传者</td>
+						<td><button class="btn btn-warning">删除</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../js/page/ajax.js"></script>
+	<!-- <script type="text/javascript" src="../js/page/data.js"></script> -->
+	<script type="text/javascript" src="../js/page/handlebars-v4.0.10.js"></script>
+	<!-- 模板 -->
+	<!-- 项目展示模板 -->
+	<script type="text/x-handlebars-template" id="project-template">
+		{{#each this}}
+		<li>
+			<!-- <img src="../img/01.jpg" alt="" class="center-block img-rounded"> -->
+			<h1 class="text-center">{{projectName}}</h1>
+		</li>
+		{{/each}}
+	</script>
+	<!-- 项目介绍模板 -->
+	<script type="text/x-handlebars-template" id="introduction-template">
+		<div class="pull-left">
+			<h1 class="project-name">{{projectName}}</h1>
+			<p class="introduce">{{projectInfo}}</p>
+		</div>
+	</script>
+	<!-- 成员模板 -->
+	<script type="text/x-handlebars-template" id="member-template">
+	{{#each this}}
+		<li>
+			<!-- <img src="../img/头像.jpg" class="img-circle"> -->
+			<span>{{userName}}</span><br>
+			<a href="javascript:;">&times;</a>
+		</li>
+	{{/each}}
+	</script>
+	<!-- 文件模板 -->
+	<script type="text/x-handlebars-template" id="file-template">
+	{{#each this}}
+		<div class="file-folder">			
+			<span class="glyphicon glyphicon-file"></span>
+			<p>{{fileName}}</p>
+			<a href="javascript:;" class="delete">删除</a>
+			<a href="javascript:;">下载</a>
+		</div>
+	{{/each}}
+	</script>
+	<!-- 文件表格模板 -->
+	<script type="text/x-handlebars-template" id="folderFile-template">
+		{{#each this}}
+			<tr>
+				<td><span class="glyphicon glyphicon-file"></span><span class="file-name">{{fileName}}<span></td>
+				<td>{{uploadTime}}</td>
+				<td>{{uploadPerson}}</td>
+				<td><button class="btn btn-warning">删除</button></td>
+			</tr>
+		{{/each}}
+	</script>
+	<script type="text/javascript" src="common/footer.js" data-js="myJs"></script>
