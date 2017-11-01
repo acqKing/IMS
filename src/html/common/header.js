@@ -151,7 +151,6 @@
 	};
 
 	var  header = html +'<div class="wrapper">'+ headerTpl.toString().replace(/^[^\/]+\/\*!?/, '').replace(/\*\/[^\/]+$/, '');
-    console.log(header)
 	document.write(header);
 
 	

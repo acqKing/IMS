@@ -30,10 +30,12 @@
 				<div class="file">
 					<h2>文件</h2>
 					<div class="btn-group">
-					    <button type="file" class="btn btn-default">
-					    	上传文件
-					    	<input type="file" name="" tabindex="-1" class="upload-file">
-					    </button>
+						<form enctype="multipart/form-data" method="post">
+						    <button type="file" class="btn btn-default">
+						    	上传文件
+						    	<input type="file" name="" tabindex="-1" class="upload-file">
+						    </button>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -45,9 +47,9 @@
 					<a href="javascript:;">删除</a>
 					<a href="javascript:;">下载</a>
 				</div>
- -->				<!-- <div class="file-folder">
+				<div class="file-folder">
 					<span class="glyphicon glyphicon-file"></span>
-					<p>文件名称</p>
+					<p>#{fileData.name}</p>
 					<div class="progress">
 					    <div class="progress-bar progress-bar-success progress-bar-striped active" style="min-width: 2em">0%
 					    </div>
@@ -74,21 +76,6 @@
 			<ul class="project-member list-inline">
 				<!-- <li>
 					<span>成员1</span><br>
-					<span>成员</span>
-					<a href="javascript:;">&times;</a>
-				</li>
-				<li>
-					<span>成员2</span><br>
-					<span>成员</span>
-					<a href="javascript:;">&times;</a>
-				</li>
-				<li>
-					<span>成员3</span><br>
-					<span>成员</span>
-					<a href="javascript:;">&times;</a>
-				</li>
-				<li>
-					<span>成员4</span><br>
 					<span>成员</span>
 					<a href="javascript:;">&times;</a>
 				</li> -->
@@ -118,10 +105,12 @@
 				<li><a href="javascript:;" id="change-table">文件</a></li>
 			</ol>
 			<div class="btn-group pull-left file-btn">
-			    <button type="file" class="btn btn-default">
-			    	上传文件
-			    	<input type="file" name="" tabindex="-1" class="upload-file">
-			    </button>
+				<form enctype="multipart/form-data" method="post">
+				    <button type="file" class="btn btn-default">
+				    	上传文件
+				    	<input type="file" name="" tabindex="-1" class="upload-file">
+				    </button>
+				</form>
 			</div>
 		</div>
 		<p class="no-file">这个文件夹里面没有文件哟:(</p>
@@ -165,7 +154,7 @@
 	<script type="text/x-handlebars-template" id="project-template">
 		{{#each this}}
 		<li>
-			<!-- <img src="../img/01.jpg" alt="" class="center-block img-rounded"> -->
+<!-- 			<img src="../../img/01.jpg" alt="" class="center-block img-rounded"> -->
 			<h1 class="text-center">{{projectName}}</h1>
 		</li>
 		{{/each}}
