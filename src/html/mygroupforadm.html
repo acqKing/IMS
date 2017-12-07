@@ -1,0 +1,351 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8">-->
+	<!--<title>我的团队</title>-->
+<!--<link rel="stylesheet" type="text/css" href="../scss/page/bootstrap.min.css">-->
+<!--<script type="text/javascript" src="../js/lib/jquery-3.1.1.min.js"></script>-->
+<!--<script type="text/javascript" src="../js/lib/bootstrap.min.js"></script>-->
+<!--&lt;!&ndash;<link rel="stylesheet" type="text/css" href="../scss/page/six.css">&ndash;&gt;-->
+
+<!-- 通用头部，index是当前页面的入口css -->
+<script src="common/header.js" data-css="one" data-title='我的团队'></script>
+<style type="text/css">
+    /*空盒子的div*/
+.twhite{
+	margin: 50px;
+
+}
+
+ul.nav-tabs{
+        width: 140px;
+        margin-top: 20px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    }
+    ul.nav-tabs li{
+        margin: 0;
+        border-top: 1px solid #ddd;
+    }
+    ul.nav-tabs li:first-child{
+        border-top: none;
+    }
+    ul.nav-tabs li a{
+        margin: 0;
+        padding: 8px 16px;
+        border-radius: 0;
+    }
+    ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+        color: #fff;
+        background: #0088cc;
+        border: 1px solid #0088cc;
+    }
+    ul.nav-tabs li:first-child a{
+        border-radius: 4px 4px 0 0;
+    }
+    ul.nav-tabs li:last-child a{
+        border-radius: 0 0 4px 4px;
+    }
+    ul.nav-tabs.affix{
+        top: 30px; /* Set the top position of pinned element */
+    }
+    /*创建新团队*/
+    .setup{
+    	cursor: pointer;
+
+    }
+    /*公告*/
+    .gonggao , .gonggaoxiu{
+      font-size: 15px;
+    }
+</style>
+<script type="text/javascript" src="../js/page/six.js"></script>
+<!--</head>-->
+<!--<body data-spy="scroll" data-target="#myScrollspy">-->
+<!--第一个导航开始-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">信管工作室</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">首页<span class="sr-only">(current)</span></a></li>
+                <li><a href="#">用户管理</a></li>
+                <li class="active"><a href="#">团队管理</a></li>
+                <li><a href="#">博客管理</a></li>
+                <li><a href="#">文件管理</a></li>
+                <li><a href="#">项目管理</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我们 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">工作室介绍</a></li>
+                        <li><a href="#">最新信息</a></li>
+                        <li><a href="#">项目成果</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">。。。</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--<form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登录</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">账户管理 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">账号注册</a></li>
+                        <li><a href="#">修改密码</a></li>
+                        <li><a href="#">相关帮助</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--第一个导航结束-->
+<!--空盒子-->
+<div class="twhite"></div>
+<!--第二个导航-->
+<div class="navbar navbar-default" role="navigation">
+<ul class="nav navbar-nav">
+<li><a href="one3.html">所有团队</a></li>
+<li class="active"><a href="#">我的团队</a></li>
+<li><a class="setup" data-toggle="modal" data-target="#myModal">创建新团队</a> </li>
+
+<!--创建新团队的弹窗-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">创建新团队</h4>
+            </div>
+            <div class="modal-body">
+            <form class="navbar-form" role="search">团队名称
+    	<div class="form-group"><input type="text" class="form-control" placeholder="">
+    		
+    	</div>
+    	<button type="submit" class="btn btn-default">提交</button>
+
+    </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--创建新团队的弹窗结束-->
+<!--搜索-->
+<li class="dropdown">
+                <a href="#" class="dropdown-toggle sousuo" data-toggle="dropdown" name="sousuo" >
+                    搜索 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" id="ziliao">团队资料</a></li>
+                    <li><a href="#" id="xiangmu">团队项目</a></li>
+                    <li><a href="#" id="chengyuan">团队成员</a></li>
+                </ul>
+</li>
+<li>
+<form class="navbar-form" role="search">
+    	<div class="form-group"><input type="text" class="form-control" placeholder="Search">
+    		
+    	</div>
+    	<button type="submit" class="btn btn-default">搜索</button>
+
+    </form>
+</li>
+<!--搜索结束-->
+</ul>
+</div>
+<!--第二个导航结束-->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3" id="myScrollspy">
+            <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
+                <li class="active"><a href="#section-1">团队公告</a></li>
+                <li><a href="#section-2">团队资料</a></li>
+                <li><a href="#section-3">团队项目</a></li>
+                <li><a href="#section-4">团队成员</a></li>
+                <li><a href="#section-5">退出团队</a></li>
+            </ul>
+        </div>
+
+        <div class="col-xs-9">
+
+            <h2 id="section-1"><br><br>团队公告
+
+
+<button class="btn btn-primary" data-toggle="modal" data-target="#myModal2">创建</button><!--创建一个新的团队公告-->
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">创建新的团队公告</h4>
+            </div>
+            <div class="modal-body">
+            <font size="+1">
+            公告标题：            
+            <input type="text" name="title">
+            <br>
+            公告内容：
+            </font>
+            <textarea cols="80" rows="15" class="gonggao">   </textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary putgongg">提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--公告修改开始-->
+<button type="button" class="btn btn-success changethegg" data-toggle="modal" data-target="#myModaltwo">修改</button>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModaltwo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">修改公告</h4>
+            </div>
+            <div class="modal-body">
+            <font size="+1">
+            公告标题：            
+            <input type="text" name="title">
+            <br>
+            公告内容：
+            </font>
+            <textarea cols="80" rows="15" class="gonggaoxiu">                
+            </textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交更改</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<!--公告修改结束-->
+<!--公告删除开始-->
+<button type="button" class="btn btn-danger">删除</button>
+
+<!--公告删除结束-->            
+</h2><hr>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum id metus ac nisl bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet sagittis. In tincidunt orci sit amet elementum vestibulum. Vivamus fermentum in arcu in aliquam. Quisque aliquam porta odio in fringilla. Vivamus nisl leo, blandit at bibendum eu, tristique eget risus. Integer aliquet quam ut elit suscipit, id interdum neque porttitor. Integer faucibus ligula.</p>            
+<h2 id="section-2"><br><br>团队资料
+
+
+<button class="btn btn-primary" data-toggle="modal" data-target="#myModal3">上传</button><!--创建一个新的团队公告-->
+
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">团队资料上传</h4>
+            </div>
+            <div class="modal-body">
+
+            <div class="form-group">
+    <input type="file" id="inputfile">
+  </div>
+  </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<button type="button" class="btn btn-success">修改</button>
+
+
+
+<button type="button" class="btn btn-danger">删除</button>      
+            </h2><hr>
+           <ul class="list-group">
+                <li class="list-group-item">资料一</li>
+                <li class="list-group-item">资料二</li>
+                <li class="list-group-item">资料三</li>
+
+           </ul>
+            <h2 id="section-3"><br><br>团队项目
+            <button type="button" class="btn btn-primary">创建</button>
+            <button type="button" class="btn btn-success">修改</button>
+            <button type="button" class="btn btn-danger">删除</button>      
+            </h2><hr>
+            <ul class="list-group">
+           <li class="list-group-item">A</li>
+           <li class="list-group-item">B</li>
+           <li class="list-group-item">C</li>
+           <li class="list-group-item">D
+           <span class="badge">新</span>
+           </li>
+           </ul>
+            <h2 id="section-4"><br><br>团队成员
+            <button type="button" class="btn btn-primary">添加</button>
+            <button type="button" class="btn btn-danger">移除</button>    
+            </h2> <hr>
+            <table class="table table-striped">
+            <caption></caption>
+            <thead>
+              <tr>
+                <th>姓名</th>
+                <th>身份</th>
+                <th>前端/后端</th>
+             </tr>
+           </thead>
+           <tbody>
+            <tr>
+              <td>Tanmay</td>
+              <td>负责人</td>
+              <td></td>
+              </tr>
+
+           <tr >             
+              <td>Sachin</td>
+              <td>管理员</td>
+              <td></td>
+           </tr>
+           <tr>
+              <td>Uma</td>
+              <td>普通成员</td>
+              <td></td>
+          </tr>
+         </tbody>
+         </table>
+            
+            <h2 id="section-5">退出团队</h2><hr>
+          <form class="navbar-form" >
+          您真的要退出团队吗？
+    	<button type="button" class="btn btn-danger">确认退出</button>
+    </form>
+    </div>
+    </div>
+</div>
+<script type="text/javascript" src="../js/lib/jquery-3.1.1.min.js"></script>
+<script src="common/footer.js" data-js="two"></script>
+<!--</body>-->
+<!--</html>-->

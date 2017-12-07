@@ -30,9 +30,7 @@
 					'<meta charset="UTF-8">'+
 					'<meta name="viewPort" content="width=device-width, initial-scale=1.0">'+
 					'<title>'+headTitle+'</title>'+
-					'<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>'+
-					'<link rel="stylesheet" href="../css/common/global.css"/>'+
-					'<link rel="stylesheet" href="../css/common/header.css"/>'
+					'<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>'
 					+cssPath+
 					'<script>'+	
 						'var MIS = {};'+
@@ -64,10 +62,10 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">首页<span class="sr-only">(current)</span></a></li>
                 <li><a href="#">用户管理</a></li>
-                <li><a href="#">团队管理</a></li>
-                <li><a href="#">博客管理</a></li>
+                <li><a href="mygroup.html">团队管理</a></li>
+                <li><a href="blog.html">博客管理</a></li>
                 <li><a href="#">文件管理</a></li>
-                <li><a href="#">项目管理</a></li>
+                <li><a href="project-management.html">项目管理</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我们 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
